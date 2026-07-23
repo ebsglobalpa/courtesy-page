@@ -1,0 +1,131 @@
+/* Created by Sobuild s.r.l. */
+
+.sob-header, #sob-header-bg, .sob-layout-cell, .sob-layout-wrapper, .sob-footer, .sob-nav, #sob-hmenu-bg, .sob-sheet,
+.clearfix {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
+}
+
+.sob-textblock > div {
+   display: block;
+   line-height: normal;
+   zoom: 1;
+}
+
+.sob-header
+{
+   z-index: 1;
+   background-image: [headerimage];
+   background-position: [headerposition];
+}
+
+#sob-header-bg 
+{
+   display: none;
+}
+
+.sob-hmenu>li, .sob-hmenu>li>a
+{
+   display: inline !important;
+   zoom: 1;
+   float: none !important;
+   vertical-align: top;
+}
+ul.sob-hmenu, ul.sob-hmenu ul {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
+}
+#sob-hmenu-bg 
+{
+   display: none;
+}
+
+ul.sob-hmenu>li:first-child {
+   padding-right:10px;
+}
+ul.sob-hmenu>li{
+   zoom:expression(runtimeStyle.zoom=1,insertBefore(document.createElement('span'),firstChild).className='sob-hmenu-separator');
+}
+ul.sob-hmenu>li>span.sob-hmenu-separator
+{
+   position:absolute;
+   display: block;
+   top:0;
+   left:  -10px;
+   width: 10px;
+   height: 38px;
+   background: url('images/menuseparator.png') center center no-repeat;
+}
+ul.sob-hmenu>li:first-child>span.sob-hmenu-separator
+{
+   display:none;
+}
+
+ul.sob-hmenu ul{
+   background-color: rgba(84, 158, 219, 0.3) !important;
+}
+
+.sob-content-layout, .sob-content-layout-row, .sob-layout-cell 
+{
+   display: block;
+   zoom: 1;
+}
+.sob-layout-cell
+{
+   position:relative;
+   float: left;
+   clear: right;
+}
+
+input[type="text"]
+{
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
+}
+
+* html input[type="text"]
+{
+   margin :0;
+}
+
+form.sob-search>input[type="text"]
+{
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
+}
+
+form.sob-search div>input[type="text"]
+{
+   width: 100%;
+}
+
+* html form.sob-search>input[type="text"] 
+{
+   margin :0;
+}
+
+.sob-postmetadataheader{
+   zoom:1;
+}
+
+.sob-postheadericons span{
+   zoom: 1;
+}
+.sob-postcontent {
+   height: 1%;
+}
+
+.sob-postfootericons span{
+   zoom: 1;
+}
+.close-alt, .arrow-right-alt, .arrow-left-alt {
+   display: block !important;
+}
+.cw, .ccw {
+   display: none !important;
+}
+
+.sob-content 
+{
+   width: auto;
+   float:none;
+}
+
