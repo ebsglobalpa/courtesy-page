@@ -1,323 +1,249 @@
-
-
-
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US"><head><!-- Created by EBS Global s.r.l.s. -->
-    <meta charset="utf-8">
-    <title>EBS Global s.r.l.s.</title>
-    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EBS Global S.r.l.</title>
+<meta name="description" content="EBS Global S.r.l. - Il sito è in fase di rinnovamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep-teal: #0e4c5f;
+    --mid-blue: #1fa8e0;
+    --sky: #7fe0fb;
+    --mist: #eef4f6;
+    --paper: #fbfdfe;
+    --ink: #0b3646;
+  }
 
-    <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <link rel="stylesheet" href="style.css" media="screen">
-    <!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
-    <link rel="stylesheet" href="style.responsive.css" media="all">
+  *{ margin:0; padding:0; box-sizing:border-box; }
 
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <script src="jquery.js"></script>
-    <script src="script.js"></script>
-    <script src="script.responsive.js"></script>
-<meta name="description" content="Azienda leader nel settore informatico con sede a Palermo, operiamo in tutta Italia. Le nostre principali partnership con: Microsoft - HP - Fortinet - VmWare - Plantronics - Praim - Symbol by Motorola">
-<meta name="keywords" content="fortinet,vmware,assistenza informatica,palermo,consulenti,servizi informatici,consulenza informatica,pc palermo,cisco,hp">
+  html,body{
+    height:100%;
+  }
 
+  body{
+    font-family:'Montserrat', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
+    position:relative;
+  }
 
-<script>jQuery(function($) {
-    'use strict';
-    if ($.fn.slider) {
-        $(".sob-slidecontainerfortinet").each(function () {
-            var slideContainer = $(this), tmp;
-            var inner = $(".sob-slider-inner", slideContainer);
-            var helper = null;
+  /* ambient arcs echoing the logo's swoosh */
+  .arcs{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  .arcs svg{
+    position:absolute;
+    opacity:0.5;
+  }
+  .arc-top{
+    top:-28vw;
+    left:-22vw;
+    width:70vw;
+    min-width:520px;
+  }
+  .arc-bottom{
+    bottom:-30vw;
+    right:-24vw;
+    width:60vw;
+    min-width:460px;
+    transform:rotate(180deg);
+  }
 
-            if ($.support.transition) {
-                helper = new BackgroundHelper();
-                helper.init("fade", "next", $(".sob-slide-item", inner).first().css($.support.transition.prefix + "transition-duration"));
-                inner.children().each(function () {
-                    helper.processSlide($(this));
-                });
+  main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:6vh 6vw 4vh;
+    position:relative;
+    z-index:1;
+  }
 
-            }
+  .logo{
+    width:min(360px, 50vw);
+    height:auto;
+    margin-bottom:clamp(2.2rem, 5vh, 3.5rem);
+    filter: drop-shadow(0 6px 18px rgba(14,76,95,0.10));
+  }
 
+  .message{
+    font-family:'Caveat', cursive;
+    font-weight:600;
+    color: var(--deep-teal);
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height:1.15;
+    max-width:16ch;
+    letter-spacing:0.3px;
+  }
 
-            inner.children().eq(0).addClass("active");
-            slideContainer.slider({
-                pause: 3433,
-                speed: 433,
-                repeat: true,
-                animation: "fade",
-                direction: "next",
-                navigator: slideContainer.siblings(".sob-slidenavigatorfortinet"),
-                helper: helper                
-            });
-        });
+  .message .accent{
+    display:block;
+    color: var(--mid-blue);
+    font-size:0.7em;
+    margin-top:0.15em;
+  }
+
+  .subtitle{
+    margin-top:1.6rem;
+    font-family:'Montserrat', sans-serif;
+    font-weight:400;
+    font-size:clamp(0.85rem, 1.6vw, 1rem);
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:#4c7987;
+  }
+
+  .subtitle::before,
+  .subtitle::after{
+    content:'';
+    display:inline-block;
+    width:28px;
+    height:1px;
+    background:#a9c9d1;
+    vertical-align:middle;
+    margin:0 12px;
+  }
+
+  footer{
+    position:relative;
+    z-index:1;
+    background: linear-gradient(100deg, var(--deep-teal) 0%, #12617a 100%);
+    color:#eaf6fa;
+    padding:1.8rem 6vw;
+  }
+
+  .footer-inner{
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:1.2rem 2rem;
+  }
+
+  .company-name{
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.05em;
+    color:#ffffff;
+    white-space:nowrap;
+  }
+
+  .contacts{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1.4rem 2.2rem;
+    font-size:0.92rem;
+    font-weight:400;
+    color:#d3ecf3;
+  }
+
+  .contacts span{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5em;
+    white-space:nowrap;
+  }
+
+  .contacts svg{
+    width:15px;
+    height:15px;
+    flex-shrink:0;
+    opacity:0.9;
+  }
+
+  .contacts a{
+    color:inherit;
+    text-decoration:none;
+  }
+  .contacts a:hover{
+    text-decoration:underline;
+  }
+
+  @media (max-width: 620px){
+    .footer-inner{
+      flex-direction:column;
+      align-items:flex-start;
+      text-align:left;
     }
-});
-</script><style>.sob-content .sob-postcontent-0 .layout-item-0 { margin-top: 5px;  }
-.sob-content .sob-postcontent-0 .layout-item-1 { background: ;  }
-.sob-content .sob-postcontent-0 .layout-item-2 { padding-right: 10px;padding-left: 10px; vertical-align: middle;  }
-.ie7 .sob-post .sob-layout-cell {border:none !important; padding:0 !important; }
-.ie6 .sob-post .sob-layout-cell {border:none !important; padding:0 !important; }
-
-.sob-slidecontainerfortinet {
-    position: relative;
-        width: 934px;
-    height: 700px;
-        }
-
-.sob-slidecontainerfortinet .sob-slide-item
-{
-
-}
-
-
-
-.sob-slidecontainerfortinet .sob-slide-item {
-    -webkit-transition: 433ms ease-in-out opacity;
-    -moz-transition: 433ms ease-in-out opacity;
-    -ms-transition: 433ms ease-in-out opacity;
-    -o-transition: 433ms ease-in-out opacity;
-    transition: 433ms ease-in-out opacity;
-    position: absolute;
-    display: none;
-	left: 0;
-	top: 0;
-	opacity: 0;
-    width:  100%;
-    height: 100%;
-}
-
-.sob-slidecontainerfortinet .active, .sob-slidecontainerfortinet .next, .sob-slidecontainerfortinet .prev {
-    display: block;
-}
-
-.sob-slidecontainerfortinet .active {
-    opacity: 1;
-}
-
-.sob-slidecontainerfortinet .next, .sob-slidecontainerfortinet .prev {
-    width: 100%;
-}
-
-.sob-slidecontainerfortinet .next.forward, .sob-slidecontainerfortinet .prev.back {
-    opacity: 1;
-}
-
-.sob-slidecontainerfortinet .active.forward {
-    opacity: 0;
-}
-
-.sob-slidecontainerfortinet .active.back {
-    opacity: 0;
-}
-
-
-.sob-slidefortinet0 {
-    background-image:  url('images/slidefortinet0.png');
-        background-size:  100%;
-        background-position:  0 0;
-    background-repeat: no-repeat;
-}
-.sob-slidefortinet1 {
-    background-image:  url('images/slidefortinet1.png');
-        background-size:  100%;
-        background-position:  0 0;
-    background-repeat: no-repeat;
-}
-.sob-slidefortinet2 {
-    background-image:  url('images/slidefortinet2.png');
-        background-size:  100%;
-        background-position:  0 0;
-    background-repeat: no-repeat;
-}
-.sob-slidefortinet3 {
-    background-image:  url('images/slidefortinet3.png');
-        background-size:  100%;
-        background-position:  0 0;
-    background-repeat: no-repeat;
-}
-.sob-slidefortinet4 {
-    background-image:  url('images/slidefortinet4.png');
-        background-size:  100%;
-        background-position:  0 0;
-    background-repeat: no-repeat;
-}
-.sob-slidefortinet5 {
-    background-image:  url('images/slidefortinet5.png');
-        background-size:  100%;
-        background-position:  0 0;
-    background-repeat: no-repeat;
-}
-.sob-slidefortinet6: {
-    background-image:  url('images/slidefortinet6.png');
-        background-size:  100%;
-        background-position:  0 0;
-    background-repeat: no-repeat;
-}
-
-
-.sob-slidenavigatorfortinet {
-  display: inline-block;
-  position: absolute;
-  direction: ltr !important;
-  top: 7px;
-  left: 43.68%;
-  z-index: 101;
-  line-height: 0 !important;
-  -webkit-background-origin: border !important;
-  -moz-background-origin: border !important;
-  background-origin: border-box !important;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  text-align: center;
-    white-space: nowrap;
+    .contacts{
+      flex-direction:column;
+      gap:0.6rem;
     }
-.sob-slidenavigatorfortinet
-{
-background: #DBDBDB;background: transparent;background: transparent;background: transparent;background: transparent;background: transparent;background: transparent;-svg-background: transparent;
--webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;
+  }
 
+  @media (prefers-reduced-motion: no-preference){
+    .logo{
+      animation: fadeUp 0.9s ease-out both;
+    }
+    .message{
+      animation: fadeUp 0.9s ease-out 0.15s both;
+    }
+    .subtitle{
+      animation: fadeUp 0.9s ease-out 0.3s both;
+    }
+  }
 
-padding:7px;
-
-
-
-
-
-}
-.sob-slidenavigatorfortinet > a
-{
-background: #A3A3A3;background: #A3A3A3;background: #A3A3A3;background: #A3A3A3;background: #A3A3A3;background: #A3A3A3;background: #A3A3A3;-svg-background: #A3A3A3;
--webkit-border-radius:30%;-moz-border-radius:30%;border-radius:30%;
-
-
-
-margin:0 10px 0 0;
-
-width: 10px;
-
-height: 10px;
-}
-.sob-slidenavigatorfortinet > a.active
-{
-background: #C0DBF2;background: #C0DBF2;background: #C0DBF2;background: #C0DBF2;background: #C0DBF2;background: #C0DBF2;background: #C0DBF2;-svg-background: #C0DBF2;
--webkit-border-radius:30%;-moz-border-radius:30%;border-radius:30%;
-
-
-
-margin:0 10px 0 0;
-
-width: 10px;
-
-height: 10px;
-}
-.sob-slidenavigatorfortinet > a:hover
-{
-background: #297DC2;background: #297DC2;background: #297DC2;background: #297DC2;background: #297DC2;background: #297DC2;background: #297DC2;-svg-background: #297DC2;
--webkit-border-radius:30%;-moz-border-radius:30%;border-radius:30%;
-
-
-
-margin:0 10px 0 0;
-
-width: 10px;
-
-height: 10px;
-}
+  @keyframes fadeUp{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
 </style>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-60075818-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
 </head>
 <body>
-<div id="sob-main">
-<header class="sob-header">
 
+  <div class="arcs" aria-hidden="true">
+    <svg class="arc-top" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="190" fill="none" stroke="#e7ecee" stroke-width="14"/>
+      <circle cx="185" cy="200" r="170" fill="none" stroke="#bdeaf8" stroke-width="14"/>
+      <circle cx="170" cy="200" r="150" fill="none" stroke="#0e4c5f" stroke-width="16" stroke-dasharray="720" stroke-dashoffset="120"/>
+    </svg>
+    <svg class="arc-bottom" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="190" fill="none" stroke="#e7ecee" stroke-width="10"/>
+      <circle cx="185" cy="200" r="168" fill="none" stroke="#7fe0fb" stroke-width="10"/>
+    </svg>
+  </div>
 
-    <div class="sob-shapes">
-<div class="sob-object1863678935" data-left="4.79%"></div>
+  <main>
+    <img class="logo" src="logo.png" alt="EBS Global S.r.l.">
+    <p class="message">Ci stiamo rifacendo<span class="accent">il look, a presto!</span></p>
+    <p class="subtitle">Il nuovo sito è in arrivo</p>
+  </main>
 
-            </div>
-
-
-
-<div class="sob-textblock sob-object986052090" data-left="94.7%">
-    <form class="sob-search" name="Search" action="javascript:void(0)">
-    <input type="text" value="">
-            <input type="submit" value="Search" name="search" class="sob-search-button">
-    </form>
-</div>
-<nav class="sob-nav">
-    <ul class="sob-hmenu"><li><a href="home-page.html" class="active">Home page</a></li><li><a href="chi-siamo.html">Chi siamo</a></li><li><a href="servizi.html">Servizi</a></li><li><a href="contattaci.html">contattaci</a></li><li><a href="downloads.html">Downloads</a></li></ul> 
-    </nav>
-
-                    
-</header>
-<div class="sob-sheet clearfix">
-            <div class="sob-layout-wrapper">
-                <div class="sob-content-layout">
-                    <div class="sob-content-layout-row">
-                        <div class="sob-layout-cell sob-content"><article class="sob-post sob-article">
-                                
-                                                
-                                <div class="sob-postcontent sob-postcontent-0 clearfix"><div class="sob-content-layout-wrapper layout-item-0">
-<div class="sob-content-layout layout-item-1">
-    <div class="sob-content-layout-row">
-    <div class="sob-layout-cell layout-item-2" style="width: 100%" >
-        <p></p><div id="fortinet" style="position: relative; display: inline-block; z-index: 0; margin: 5px;  border-width: 0px;  " class="sob-collage">
-<div class="sob-slider sob-slidecontainerfortinet" data-width="934" data-height="700">
-    <div class="sob-slider-inner">
-<div class="sob-slide-item sob-slidefortinet0">
-
-</div>
-<div class="sob-slide-item sob-slidefortinet1">
-
-</div>
-<div class="sob-slide-item sob-slidefortinet2">
-
-</div>
-<div class="sob-slide-item sob-slidefortinet3">
-
-</div>
-<div class="sob-slide-item sob-slidefortinet4">
-
-</div>
-
+  <footer>
+    <div class="footer-inner">
+      <div class="company-name">EBS GLOBAL S.R.L.</div>
+      <div class="contacts">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Via Catania, 146 &ndash; 90141 Palermo
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+39091432151">091 432151</a>
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          <a href="mailto:info@ebsglobal.it">info@ebsglobal.it</a>
+        </span>
+      </div>
     </div>
-</div>
-<div class="sob-slidenavigator sob-slidenavigatorfortinet" data-left="43.68">
-<a href="#" class="sob-slidenavigatoritem"></a><a href="#" class="sob-slidenavigatoritem"></a><a href="#" class="sob-slidenavigatoritem"></a><a href="#" class="sob-slidenavigatoritem"></a><a href="#" class="sob-slidenavigatoritem"></a>
-</div>
+  </footer>
 
-
-
-    </div>
-
-    </div>
-    </div>
-</div>
-</div>
-</div>
-                                
-                
-
-</article></div>
-                    </div>
-                </div>
-            </div><footer class="sob-footer">
-<div style="position:relative;display:inline-block;padding-left:50px;padding-right:50px"><p><a href="home-page.html">Home</a>|<a href="chi-siamo.html">Chi siamo</a>|<a href="servizi.html">Servizi</a>|<a href="downloads.html">Download</a>|<a href="partner-commerciali.html">Partnership</a>|<a href="/contattaci.html">Contatti</a>|<a href="privacy.html">Privacy</a></p><p><br>EBS Global s.r.l.s.&nbsp;</p><p>Via Catania, 146 - 90141 Palermo&nbsp;</p><p>P.I. 06833110825</p><p><span style="color: #000000; font-family: Verdana; font-size: xx-small; letter-spacing: normal; background-color: #B6B6B6;">Copyright © 2020, EBS Global - Tutti i contenuti del sito sono protetti dal diritto d'autore</span><br></p></div>
-</footer>
-
-    </div>
-</div>
-
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d73cb42a-5c86-4b80-afed-21f97c7bad1e" type="text/javascript" data-blockingmode="auto"></script>
-</body></html>
+</body>
+</html>
